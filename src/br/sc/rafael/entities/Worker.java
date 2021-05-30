@@ -85,14 +85,4 @@ public class Worker {
 
 	}
 	
-	public String toString() {
-		return "Name: "
-			+ name 
-			+ "Department: "
-			+ department
-			+ "Income for ";  
-		
-				
-	}
-
 }
