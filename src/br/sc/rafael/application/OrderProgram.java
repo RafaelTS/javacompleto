@@ -9,13 +9,16 @@ import java.util.Scanner;
 import br.sc.rafael.entities.Client;
 import br.sc.rafael.entities.OrderItem;
 import br.sc.rafael.entities.Product;
+import br.sc.rafael.entities.enums.OrderStatus;
 
 public class OrderProgram {
 
 	public static void main(String[] args) throws ParseException {
+
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
-		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
 		System.out.println("Enter cliente data:");
 		System.out.println("Name: ");
@@ -23,28 +26,35 @@ public class OrderProgram {
 		System.out.println("Email: ");
 		String email = sc.nextLine();
 		System.out.println("Birth date (DD/MM/YYYY): ");
-		Date birthDay = sdf.parse(sc.next());
+		Date birthDate = sdf.parse(sc.next());
 
-		Client client = new Client(name, email, birthDay);
+		Client client = new Client(name, email, birthDate);
 
 		System.out.println("Enter order data: ");
-		System.out.println("Status: ");
-		String status = sc.nextLine();
+		System.out.print("Status: ");
+		OrderStatus status = OrderStatus.valueOf(sc.next());
 		System.out.println("How many items to this order? ");
 		int n = sc.nextInt();
 
 		for (int i = 1; i <= n; i++) {
 			System.out.println("Enter #" + i + "item data: ");
 			System.out.println("Product name: ");
-			String nameProduct = sc.nextLine();
+			sc.nextLine();
+			String productName = sc.nextLine();
 			System.out.println("Product price: ");
-			Double price = sc.nextDouble();
+			double price = sc.nextDouble();
 			System.out.println("Quantity: ");
-			Integer quantity = sc.nextInt();
-			OrderItem orderItems = new OrderItem(quantity, price, new Product(nameProduct));
+			int quantity = sc.nextInt();
+			Product product = new Product(productName, price);
+			OrderItem orderItems = new OrderItem(quantity, price, product);
 		}
-		
+		System.out.println();
 		System.out.println("ORDER SUMMARY:");
+		System.out.println("Order moment: ");
+		System.out.println("Order status:");
+		System.out.println("Client: " + client.getName());
+		System.out.println("Order Items: ");
+
 		sc.close();
 	}
 
