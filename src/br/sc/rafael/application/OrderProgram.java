@@ -7,6 +7,7 @@ import java.util.Locale;
 import java.util.Scanner;
 
 import br.sc.rafael.entities.Client;
+import br.sc.rafael.entities.Order;
 import br.sc.rafael.entities.OrderItem;
 import br.sc.rafael.entities.Product;
 import br.sc.rafael.entities.enums.OrderStatus;
@@ -33,27 +34,31 @@ public class OrderProgram {
 		System.out.println("Enter order data: ");
 		System.out.print("Status: ");
 		OrderStatus status = OrderStatus.valueOf(sc.next());
+
+		Order order = new Order(new Date(), status, client);
 		System.out.println("How many items to this order? ");
 		int n = sc.nextInt();
 
 		for (int i = 1; i <= n; i++) {
 			System.out.println("Enter #" + i + "item data: ");
-			System.out.println("Product name: ");
+			System.out.print("Product name: ");
 			sc.nextLine();
 			String productName = sc.nextLine();
-			System.out.println("Product price: ");
-			double price = sc.nextDouble();
-			System.out.println("Quantity: ");
+			System.out.print("Product price: ");
+			double productPrice = sc.nextDouble();
+			System.out.print("Quantity: ");
 			int quantity = sc.nextInt();
-			Product product = new Product(productName, price);
-			OrderItem orderItems = new OrderItem(quantity, price, product);
+
+			Product product = new Product(productName, productPrice);
+
+			OrderItem orderItems = new OrderItem(quantity, productPrice, product);
+
+			order.addOrderItem(orderItems);
+
 		}
-		System.out.println();
-		System.out.println("ORDER SUMMARY:");
-		System.out.println("Order moment: ");
-		System.out.println("Order status:");
-		System.out.println("Client: " + client.getName());
-		System.out.println("Order Items: ");
+
+		System.out.println("");
+		System.out.println(order);
 
 		sc.close();
 	}

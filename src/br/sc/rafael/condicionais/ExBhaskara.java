@@ -3,11 +3,9 @@ package br.sc.rafael.condicionais;
 import java.util.Locale;
 import java.util.Scanner;
 
-import com.sun.org.apache.xerces.internal.impl.xpath.regex.Match;
-
-//Leia 3 valores de ponto flutuante e efetue o cálculo das raízes da equação de bhaskara. 
-//Se não for possível calcular as raízes, mostre a mensagem correspondente 
-//"Impossível calcular, caso haja uma divisão por 0 ou raiz de número negativo
+//Leia 3 valores de ponto flutuante e efetue o cï¿½lculo das raï¿½zes da equaï¿½ï¿½o de bhaskara. 
+//Se nï¿½o for possï¿½vel calcular as raï¿½zes, mostre a mensagem correspondente 
+//"Impossï¿½vel calcular, caso haja uma divisï¿½o por 0 ou raiz de nï¿½mero negativo
 
 
 public class ExBhaskara {
@@ -23,7 +21,7 @@ public class ExBhaskara {
 		double delta = b * b -4.0 * a * c;
 		
 		if (a == 0 || delta < 0) {
-			System.out.println("impossível calcular");
+			System.out.println("impossivel calcular");
 		}
 		else {
 			double r1 = (-b + Math.sqrt(delta)) / (2.0 * a);
