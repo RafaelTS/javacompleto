@@ -4,23 +4,23 @@ import java.util.Date;
 
 public class Installment {
 
-    private Date duoDate;
+    private Date dueDate;
     private Double amount;
 
     public Installment() {
     }
 
-    public Installment(Date duoDate, Double amount) {
-        this.duoDate = duoDate;
+    public Installment(Date dueDate, Double amount) {
+        this.dueDate = dueDate;
         this.amount = amount;
     }
 
     public Date getDuoDate() {
-        return duoDate;
+        return dueDate;
     }
 
-    public void setDuoDate(Date duoDate) {
-        this.duoDate = duoDate;
+    public void setDuoDate(Date dueDate) {
+        this.dueDate = dueDate;
     }
 
     public Double getAmount() {
