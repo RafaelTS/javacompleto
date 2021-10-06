@@ -46,11 +46,4 @@ public class Contract {
     	return installments;
     }
 
-    public void addInstallment(Installment installment){
-    	installments.add(installment);
-    }
-
-    public void removeInstallment(Installment installment){
-    	installments.remove(installment);
-    }
 }
