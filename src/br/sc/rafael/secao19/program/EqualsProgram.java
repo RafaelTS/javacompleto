@@ -22,9 +22,6 @@ public class EqualsProgram {
         System.out.println(s3 == s4);
 
 
-
-
-
     }
 
 }
