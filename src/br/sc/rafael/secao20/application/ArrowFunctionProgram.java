@@ -1,10 +1,8 @@
-package br.sc.rafael.secao20.program;
+package br.sc.rafael.secao20.application;
 
 import br.sc.rafael.secao20.entities.Product;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
 public class ArrowFunctionProgram {
@@ -20,7 +18,7 @@ public class ArrowFunctionProgram {
         //my arrow function or something like below
         //Comparator<Product> comp = (p1, p2) -> p1.getNome().toUpperCase().compareTo(p2.getNome().toUpperCase());
 
-        list.sort((p1, p2) -> p1.getNome().toUpperCase().compareTo(p2.getNome().toUpperCase()));
+        list.sort((p1, p2) -> p1.getName().toUpperCase().compareTo(p2.getName().toUpperCase()));
 
         for (Product product : list){
             System.out.println(product);
