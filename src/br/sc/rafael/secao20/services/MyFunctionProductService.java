@@ -18,4 +18,11 @@ public class MyFunctionProductService {
         }
         return sum;
     }
+
+    public double filteredSumWithListStream(List<Product> list, Predicate<Product> criteria) {
+        double sum = list.stream().filter(criteria::test).mapToDouble(Product::getPrice).sum();
+        return sum;
+    }
+
+
 }
