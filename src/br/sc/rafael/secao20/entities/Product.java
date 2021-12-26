@@ -41,7 +41,14 @@ public class Product {
     public void nonStaticPriceUpdate(){
         setPrice(getPrice() * 1.1);
     }
+    //Creation Methods for Function Examples
+    public static String staticUpperCaseName(Product product){
+        return product.getName().toUpperCase();
+    }
 
+    public String nonStaticUpperCaseName(){
+        return name.toUpperCase();
+    }
 
 
 
